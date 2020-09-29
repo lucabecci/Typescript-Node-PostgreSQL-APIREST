@@ -1,11 +1,8 @@
 import { Pool } from "pg";
-
+import dotenv from 'dotenv'
+dotenv.config()
 const pool = new Pool({
-  user: <string> "postgres",
-  host: <string> "localhost",
-  password: <string> "password",
-  database: <string> "apitypescript",
-  port: <number> 5432,
+  connectionString: <string> process.env.DATABASE_URL
 });
 
 export default pool;
